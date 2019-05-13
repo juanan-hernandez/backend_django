@@ -1,9 +1,17 @@
-from django.shortcuts import render
 from rest_framework import generics
+from .models import CvExperience
+from .serializers import CvExperienceSerializer
 
-# Create your views here.
+
+class CvExperienceView(generics.RetrieveUpdateDestroyAPIView):
+
+    queryset = CvExperience.objects.all()
+    serializer_class = CvExperienceSerializer
 
 
-class ListCvEmploymentHistory(generics.RetrieveUpdateDestroyAPIView):
-    # TODO por definir
-    pass
+class CvExperiencesView(generics.ListCreateAPIView):
+
+    queryset = CvExperience.objects.all()
+    serializer_class = CvExperienceSerializer
+
+

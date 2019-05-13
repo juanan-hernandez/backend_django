@@ -1,9 +1,8 @@
 from django.urls import path
+from .views import CvExperienceView, CvExperiencesView
 
-from . import views
 
 urlpatterns = [
-    path('', views.ListCvEmploymentHistory.as_view()),
-    # path('', views.ListPlanes.as_view()),
-    # path('<int:pk>/', views.DetailPlanes.as_view()),
+    path('', CvExperiencesView.as_view()),
+    path('<int:pk>/', CvExperienceView.as_view()),
 ]
