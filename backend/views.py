@@ -1,11 +1,7 @@
-from django.shortcuts import render
+# from django.shortcuts import render
 from rest_framework import generics
 from .models import CvExperience
-from .serializers import CvExperienceSerializer
-
-
-def index(request, path=''):
-    return render(request, 'index.html')
+from .serializers import CvExperienceSerializer, CvExperienceSerializerEn, CvExperienceSerializerEs
 
 
 class CvExperienceView(generics.RetrieveUpdateDestroyAPIView):
@@ -14,9 +10,13 @@ class CvExperienceView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = CvExperienceSerializer
 
 
-class CvExperiencesView(generics.ListCreateAPIView):
+class CvExperiencesViewEn(generics.ListCreateAPIView):
 
     queryset = CvExperience.objects.all()
-    serializer_class = CvExperienceSerializer
+    serializer_class = CvExperienceSerializerEn
 
 
+class CvExperiencesViewEs(generics.ListCreateAPIView):
+
+    queryset = CvExperience.objects.all()
+    serializer_class = CvExperienceSerializerEs

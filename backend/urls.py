@@ -1,8 +1,8 @@
 from django.urls import path
-from .views import CvExperienceView, CvExperiencesView
+from .views import CvExperienceView, CvExperiencesViewEn, CvExperiencesViewEs
 
 
 urlpatterns = [
-    path('', CvExperiencesView.as_view()),
+    path('', CvExperiencesViewEs.as_view()),
     path('<int:pk>/', CvExperienceView.as_view()),
 ]
