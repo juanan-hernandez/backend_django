@@ -26,7 +26,7 @@ SECRET_KEY = '4bz@&eg_b=#v*_c59bvi9!v^60j#nxt)8v0@*9r%b2@r-a2=jt'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -90,9 +90,14 @@ WSGI_APPLICATION = 'backend_django.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'OPTIONS': {
-            'read_default_file': os.path.join(BASE_DIR, 'backend_django/properties.cnf'),
-        },
+        'NAME': os.environ['DB_NAME'],
+        'USER': os.environ['DB_USER'],
+        'PASSWORD': os.environ['DB_PASSWORD'],
+        'HOST': os.environ['DB_HOST'],
+        'PORT': '3306',
+    #     'OPTIONS': {
+    #         'read_default_file': os.path.join(BASE_DIR, 'backend_django/properties.cnf'),
+    #     },
     }
 }
 

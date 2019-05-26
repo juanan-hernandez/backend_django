@@ -12,11 +12,11 @@ class CvExperienceView(generics.RetrieveUpdateDestroyAPIView):
 
 class CvExperiencesViewEn(generics.ListCreateAPIView):
 
-    queryset = CvExperience.objects.all()
+    queryset = CvExperience.objects.all().order_by('-init_date')
     serializer_class = CvExperienceSerializerEn
 
 
 class CvExperiencesViewEs(generics.ListCreateAPIView):
 
-    queryset = CvExperience.objects.all()
+    queryset = CvExperience.objects.all().order_by('-init_date')
     serializer_class = CvExperienceSerializerEs
