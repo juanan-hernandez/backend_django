@@ -1,0 +1,5 @@
+build:
+  docker:
+    backend: Dockerfile
+run:
+  backend: docker run -d -p 8000:8000
