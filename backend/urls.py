@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import CvExperienceView, CvExperiencesViewEn, CvExperiencesViewEs
+from .views import CvExperienceView, CvExperiencesViewEs
 
 
 urlpatterns = [

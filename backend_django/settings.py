@@ -95,9 +95,9 @@ DATABASES = {
         'PASSWORD': os.environ['DB_PASSWORD'],
         'HOST': os.environ['DB_HOST'],
         'PORT': '3306',
-    #     'OPTIONS': {
-    #         'read_default_file': os.path.join(BASE_DIR, 'backend_django/properties.cnf'),
-    #     },
+        # 'OPTIONS': {
+        #     'read_default_file': os.path.join(BASE_DIR, 'backend_django/properties.cnf'),
+        # },
     }
 }
 
